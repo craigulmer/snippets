@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+  <Placemark>
+    <visibility>1</visibility>
+    <name><![CDATA[Toaster Course]]></name>
+    <description><![CDATA[Created by <a href='http://www.bikeroutetoaster.com/'>BikeRouteToaster.com</a>]]></description>
+    <Style>
+      <geomColor>ffc32f2f</geomColor>
+      <geomScale>3</geomScale>
+    </Style>
+    <LineString>
+      <alititudeMode>clampToGround</alititudeMode>
+      <coordinates>-122.3899,37.77836 -122.38966,37.77821 -122.38949,37.77841 -122.3897,37.77855</coordinates>
+    </LineString>
+  </Placemark>
+</kml>
