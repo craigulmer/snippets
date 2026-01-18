@@ -1,0 +1,38 @@
+#+TITLE: UK Environment Agency Data
+
+* Data Source
+
+The UK EA has LIDAR data for the UK, and makes it available in tiles that are easy to process. They got a lot of press for open sourcing it in Oct 2015. Main links:
+
+- Info page: https://data.gov.uk/dataset/lidar-composite-dsm-1m1
+- Useful query page: http://environment.data.gov.uk/ds/survey#/download
+
+* Grabbing Data
+
+They have a nice webpage that lets you download zip tiles of data files. It's easy to just pull the tiles you want: 
+
+- Go to: http://environment.data.gov.uk/ds/survey
+- Select a tile
+- At the bottom they list different data products
+- I've been using the LIDAR Composite DTMs at different resolutions (with no coverage?)
+
+** Automating grabbing
+It looks like the web page links are run through javascript to format the requests to a backend rest server. Using wireshark, I saw the below http request for grabbing TQ38 DTM at 50cm spatial resolution (360MB):
+
+http://www.geostore.com/environment-agency/rest/product/download/8007
+
+The links is wget'able. Downloading file 8008 resolved to another tile (494MB).
+
+|-------+---------------------+---------------------+---------------------------+---|
+| DL ID | first tile          | last tile           | zip name                  |   |
+|-------+---------------------+---------------------+---------------------------+---|
+|  8005 | tq3074_DTM_50cm.asc | tq3979_DTM_50cm.asc |                           |   |
+|  8006 | tq4070_DSM_50cm.asc | tq4979_DSM_50cm.asc | (LIDAR-DTM-50CM-47.zip)   |   |
+|  8007 | tq3080_DTM_50cm.asc | tq3989_DTM_50cm.asc | LIDAR-DTM-50CM-TQ38.zip   |   |
+|  8008 | tq4080_DSM_50cm.asc | tq4989_DSM_50cm.asc | (LIDAR-DTM-50CM-TQ48.zip) |   |
+|-------+---------------------+---------------------+---------------------------+---|
+
+
+* Locations of interest
+
+- AWE : SU56, SU66, SU55, SU65 (in SU56?)
